@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Test hello.socket.io</title>
+    <script src="socket.io.min.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:8055');
+        socket.on('eSACExec', function (data) {
+            var newLi = document.createElement('li');
+            newLi.style.color = "green";
+            newLi.innerHTML = data.data + ' from ' + data.from;
+            document.getElementById("list").appendChild(newLi);
+            console.log(data.data);
+        });
+
+        socket.on('eSACOnError', function (data) {
+            var newLi = document.createElement('li');
+            newLi.style.color = "red";
+            newLi.innerHTML = data.message;
+            document.getElementById("list").appendChild(newLi);
+            console.log(data.error);
+        });
+
+        function sendHello() {
+            socket.emit('eSASExec', {module: 'api.system.win.window', version:'0.0.1',
+                repoURL: 'git+https://github.com/Gromatchikov/',
+                method: 'sayHello', params: {hello: 'Server API'}});
+        }
+    </script>
+</head>
+<body>
+    <ol id="list">
+    </ol>
+    <button onclick="sendHello()">send</button>
+</body>
+</html>

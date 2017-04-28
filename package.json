@@ -1,0 +1,56 @@
+{
+  "name": "api.system",
+  "description": "Module manager for system API",
+  "version": "0.0.1",
+  "main": "./lib/bootstrap.js",
+  "homepage": "https://github.com/Gromatchikov/api.system",
+  "keywords": [
+    "bootsrap",
+    "server",
+    "system",
+    "module"
+  ],
+  "author": {
+    "name": "Перспективные разработки ЕФС",
+    "email": "UFSRequirements@sberbank.ru",
+    "url": "https://habrahabr.ru/conversations/EFS_programm/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gromatchikov/api.system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gromatchikov/api.system/issues"
+  },
+  "dependencies": {
+    "util": "*",
+    "npm": "*",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3",
+    "semver": "*",
+    "optimist": "*",
+    "window": "git+https://github.com/Gromatchikov/api.system.win.window.git#r0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./lib/systemAPIServer.start.js",
+    "stop": "node ./lib/systemAPIServer.stop.js --port 8055"
+  },
+  "config": {
+    "port": "8055",
+    "remoteRepoURL": "git+https://github.com/Gromatchikov/"
+  },
+  "bin": {
+    "api.system": "./bin/api.system"
+  },
+  "engines": {
+    "node": ">= 7.3.0"
+  },
+  "preferGlobal": true,
+  "license": "Apache-2.0",
+  "private": true,
+  "optionalDependencies": {
+    "api.system.win.window": "git+https://github.com/Gromatchikov/api.system.win.window.git#r0.0.1"
+  }
+}
