@@ -28,8 +28,7 @@
     "socket.io": "^1.7.3",
     "socket.io-client": "^1.7.3",
     "semver": "*",
-    "optimist": "*",
-    "window": "git+https://github.com/Gromatchikov/api.system.win.window.git#r0.0.1"
+    "optimist": "*"
   },
   "devDependencies": {},
   "scripts": {
